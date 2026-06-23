@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raisha Nur Rahmani — Portofolio</title>
+<script>
+  (function(){
+    try{
+      var navEntries = performance.getEntriesByType('navigation');
+      var isReload = navEntries.length
+        ? navEntries[0].type === 'reload'
+        : (performance.navigation && performance.navigation.type === 1);
+      if (isReload && window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }catch(e){}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* brand — constant across themes, used for the always-dark surfaces (hero/contact/footer) */
+    --wine-deep:#371720;
+    --wine:#743449;
+    --wine-light:#9C5468;
+    --gold:#BE9A5E;
+    --gold-soft:#D8C094;
+    --sage:#7E9178;
+    --on-dark:#FBF6F1;
+
+    /* surface tokens — themed */
+    --ivory:#FBF6F1;
+    --paper:#F3E7DF;
+    --wine-tint:#F3E4E6;
+    --ink:#2A1014;
+    --text-soft:#4A3539;
+    --muted:#8C6F73;
+    --line:#E4D2CC;
+    --heading:#371720;
+    --accent-text:#7D3F50;
+    --accent-tag-bg:rgba(125,63,80,0.08);
+    --nav-bg:rgba(251,246,241,0.86);
+
+    --radius:18px;
+    --maxw:1180px;
+  }
+
+  :root[data-theme="dark"]{
+    --ivory:#221318;
+    --paper:#170B0E;
+    --wine-tint:#2A1117;
+    --ink:#F3E4E6;
+    --text-soft:#D8BFC3;
+    --muted:#A98890;
+    --line:#3D262B;
+    --heading:#EAC7CE;
+    --accent-text:#D9A3B2;
+    --accent-tag-bg:rgba(217,163,178,0.14);
+    --nav-bg:rgba(23,13,16,0.86);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Poppins', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    transition:background 0.3s ease, color 0.3s ease;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'DM Serif Display', serif;
+    font-weight:500;
+    margin:0;
+    line-height:1.12;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  .eyebrow{
+    font-family:'DM Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:700;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  section{padding:108px 0;}
+  @media (max-width:720px){ section{padding:72px 0;} }
+
+  ::selection{ background:var(--gold-soft); color:var(--wine-deep); }
+
+  :focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--nav-bg);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:background 0.3s ease, border-color 0.3s ease;
+  }
+  .nav-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:18px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  }
+  .nav-mark{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--heading);
+    letter-spacing:0.01em;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .nav-mark span{ color:var(--gold); }
+  nav.links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  nav.links a{
+    text-decoration:none;
+    font-size:0.92rem;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:4px;
+    white-space:nowrap;
+  }
+  nav.links a::after{
+    content:'';
+    position:absolute; left:0; bottom:0;
+    width:0; height:1.5px;
+    background:var(--wine);
+    transition:width 0.25s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+
+  .nav-actions{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-shrink:0;
+  }
+
+  .theme-toggle{
+    width:38px; height:38px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:transparent;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    color:var(--heading);
+    transition:border-color 0.2s ease, transform 0.2s ease;
+    flex-shrink:0;
+  }
+  .theme-toggle:hover{ border-color:var(--gold); transform:translateY(-1px); }
+  .theme-toggle svg{ width:18px; height:18px; }
+  .theme-toggle .icon-moon{ display:none; }
+  [data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
+  [data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
+
+  .nav-cta{
+    background:var(--wine-deep);
+    color:var(--on-dark) !important;
+    padding:9px 20px;
+    border-radius:999px;
+    font-size:0.85rem;
+    text-decoration:none;
+    font-weight:600;
+    transition:background 0.2s ease;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--wine); }
+
+  .burger{
+    display:none;
+    background:none; border:none; cursor:pointer;
+    padding:6px; width:38px; height:38px;
+    flex-direction:column; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .burger span{
+    display:block; width:21px; height:2px;
+    background:var(--heading);
+    margin:3px 0;
+    transition:transform 0.25s ease, opacity 0.2s ease;
+  }
+  .burger.active span:nth-child(1){ transform:translateY(5px) rotate(45deg); }
+  .burger.active span:nth-child(2){ opacity:0; }
+  .burger.active span:nth-child(3){ transform:translateY(-5px) rotate(-45deg); }
+
+  @media (max-width:880px){
+    nav.links{
+      position:absolute;
+      top:100%;
+      left:0; right:0;
+      background:var(--ivory);
+      flex-direction:column;
+      align-items:flex-start;
+      padding:22px 32px 30px;
+      gap:18px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 20px 30px rgba(0,0,0,0.12);
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(-8px);
+      pointer-events:none;
+      transition:opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+    }
+    nav.links.open{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    nav.links a{ font-size:1rem; }
+    .nav-cta{ display:none; }
+    .burger{ display:flex; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(circle at 85% 12%, rgba(196,154,74,0.18), transparent 45%),
+      linear-gradient(165deg, var(--wine-deep), var(--wine) 78%);
+    color:var(--on-dark);
+    padding:80px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .thread{
+    position:absolute;
+    inset:0;
+    width:100%; height:100%;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+    z-index:2;
+  }
+  @media (max-width:880px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  .hero-eyebrow{
+    color:var(--gold-soft);
+    font-family:'DM Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    font-weight:700;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow::before{
+    content:'';
+    width:26px; height:1px;
+    background:var(--gold-soft);
+    display:inline-block;
+  }
+  h1.hero-name{
+    font-size:clamp(2.6rem, 5.4vw, 4.4rem);
+    margin-top:18px;
+    color:var(--on-dark);
+  }
+  h1.hero-name em{
+    font-style:italic;
+    color:var(--gold-soft);
+    font-weight:400;
+  }
+  .hero-role{
+    margin-top:18px;
+    font-size:1.08rem;
+    max-width:46ch;
+    color:#EFD9DC;
+  }
+  .hero-cta{
+    margin-top:34px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 26px;
+    border-radius:999px;
+    font-size:0.92rem;
+    font-weight:600;
+    text-decoration:none;
+    transition:transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--wine-deep);
+  }
+  .btn-primary:hover{ background:var(--gold-soft); transform:translateY(-2px); }
+  .btn-ghost{
+    background:transparent;
+    border:1px solid rgba(251,246,241,0.4);
+    color:var(--on-dark);
+  }
+  .btn-ghost:hover{ border-color:var(--on-dark); transform:translateY(-2px); }
+
+  .hero-photo{
+    position:relative;
+    display:flex;
+    justify-content:center;
+  }
+  .profile-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover; 
+  } 
+  .photo-frame{
+    width:280px;
+    height:340px;
+    border-radius:24px;
+    border:1.5px dashed rgba(126,145,120,0.6);
+    background:linear-gradient(150deg, rgba(251,246,241,0.08), rgba(251,246,241,0.02));
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    position:relative;
+    overflow:hidden;
+  }
+  .photo-frame .monogram{
+    font-family:'DM Serif Display', serif;
+    font-size:3.4rem;
+    color:var(--gold-soft);
+    font-weight:500;
+  }
+  .photo-frame .photo-note{
+    font-family:'DM Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(251,246,241,0.55);
+    text-align:center;
+    padding:0 20px;
+  }
+  .photo-frame::before{
+    content:'';
+    position:absolute;
+    top:14px; left:14px; right:14px; bottom:14px;
+    border:1px solid rgba(251,246,241,0.12);
+    border-radius:16px;
+  }
+  .photo-tag{
+    position:absolute;
+    bottom:-16px;
+    background:var(--sage);
+    color:var(--wine-deep);
+    font-family:'DM Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.06em;
+    padding:7px 16px;
+    border-radius:999px;
+    font-weight:700;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+
+  /* stat strip */
+  .stats{
+    margin-top:64px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border-top:1px solid rgba(251,246,241,0.18);
+    padding-top:32px;
+    position:relative;
+    z-index:2;
+  }
+  @media (max-width:720px){ .stats{ grid-template-columns:repeat(2,1fr); gap:28px 0; } }
+  .stat-num{
+    font-family:'Poppins', sans-serif;
+    font-size:2.1rem;
+    color:var(--gold-soft);
+    font-weight:500;
+  }
+  .stat-label{
+    font-size:0.78rem;
+    color:#E2BFC4;
+    margin-top:4px;
+    max-width:18ch;
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section-head{ max-width:640px; margin-bottom:48px; }
+  .section-head h2{
+    font-size:clamp(1.7rem,3vw,2.3rem);
+    margin-top:12px;
+    color:var(--heading);
+  }
+  .section-head p{ color:var(--muted); margin-top:14px; font-size:1rem; }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--ivory); }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:64px;
+    align-items:start;
+  }
+  @media (max-width:880px){ .about-grid{ grid-template-columns:1fr; gap:32px; } }
+  .about-quote{
+    font-family:'DM Serif Display', serif;
+    font-style:italic;
+    font-size:1.5rem;
+    line-height:1.4;
+    color:var(--heading);
+    border-left:2px solid var(--gold);
+    padding-left:24px;
+  }
+  .about-body p{ margin:0 0 18px; color:var(--text-soft); }
+  .about-body p:last-child{ margin-bottom:0; }
+  .about-body .lead{
+    margin-top:14px; font-size:1.02rem; color:var(--heading);
+    font-family:'DM Serif Display', serif; font-weight:500;
+  }
+
+  /* ---------- EDU + SKILLS ---------- */
+  .split{ background:var(--paper); }
+  .split-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+  }
+  @media (max-width:880px){ .split-grid{ grid-template-columns:1fr; } }
+  .edu-card{
+    background:var(--ivory);
+    border-radius:var(--radius);
+    padding:32px;
+    border:1px solid var(--line);
+  }
+  .edu-card .eyebrow{ margin-bottom:10px; display:block; }
+  .edu-card h3{ font-size:1.3rem; color:var(--heading); }
+  .edu-card .meta{ margin-top:8px; color:var(--muted); font-size:0.92rem; }
+  .edu-stat{
+    margin-top:24px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+  .edu-stat b{ font-family:'DM Serif Display', serif; font-size:1.9rem; color:var(--gold); }
+  .lang-list{ margin-top:22px; display:flex; flex-direction:column; gap:10px; }
+  .lang-list li{ list-style:none; display:flex; justify-content:space-between; font-size:0.9rem; border-bottom:1px dashed var(--line); padding-bottom:8px; }
+  .lang-list li span:last-child{ color:var(--muted); font-family:'DM Mono', monospace; font-size:0.78rem; }
+
+  .skills-title{ font-family:'Poppins', sans-serif; font-size:1.7rem; margin-top:10px; color:var(--heading); }
+
+  .skills-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  @media (max-width:560px){ .skills-cols{ grid-template-columns:1fr; } }
+  .skill-group h4{
+    font-size:0.92rem;
+    color:var(--accent-text);
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:14px;
+  }
+  .skill-group ul{ margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .skill-group li{
+    font-size:0.93rem;
+    color:var(--text-soft);
+    padding-left:16px;
+    position:relative;
+  }
+  .skill-group li::before{
+    content:'';
+    position:absolute; left:0; top:8px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--gold);
+  }
+
+  /* ---------- EXPERIENCE TIMELINE ---------- */
+  .exp{ background:var(--ivory); }
+  .timeline{
+    position:relative;
+    margin-top:8px;
+  }
+  .timeline::before{
+    content:'';
+    position:absolute;
+    left:11px; top:6px; bottom:6px;
+    width:1.5px;
+    background:var(--line);
+  }
+  .t-item{
+    position:relative;
+    padding-left:48px;
+    margin-bottom:44px;
+  }
+  .t-item:last-child{ margin-bottom:0; }
+  .t-dot{
+    position:absolute; left:0; top:4px;
+    width:24px; height:24px;
+    border-radius:50%;
+    background:var(--ivory);
+    border:1.5px solid var(--wine);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .t-dot::after{
+    content:'';
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--wine);
+  }
+  .t-period{
+    font-family:'DM Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    color:var(--gold);
+    text-transform:uppercase;
+    font-weight:700;
+  }
+  .t-item h3{ font-size:1.2rem; color:var(--heading); margin-top:6px; }
+  .t-item .org{ color:var(--muted); font-size:0.88rem; margin-top:2px; }
+  .t-item ul{ margin:14px 0 0; padding-left:18px; color:var(--text-soft); }
+  .t-item li{ margin-bottom:7px; font-size:0.94rem; }
+
+  /* ---------- ASSESSMENT CARDS ---------- */
+  .assess{ background:var(--wine-tint); }
+  .assess-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:14px;
+  }
+  @media (max-width:880px){ .assess-grid{ grid-template-columns:repeat(2,1fr); } }
+  .assess-card{
+    background:var(--ivory);
+    border-radius:14px;
+    padding:22px 18px;
+    text-align:center;
+    border:1px solid var(--line);
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .assess-card:hover{ transform:translateY(-4px); box-shadow:0 14px 26px rgba(122,40,64,0.12); }
+  .assess-card .tool{
+    font-family:'DM Serif Display', serif;
+    font-size:1.5rem;
+    color:var(--accent-text);
+  }
+  .assess-card .desc{ font-size:0.78rem; color:var(--muted); margin-top:8px; }
+  .assess-note{
+    margin-top:32px;
+    background:var(--ivory);
+    border-left:3px solid var(--gold);
+    padding:18px 24px;
+    border-radius:0 10px 10px 0;
+    font-size:0.92rem;
+    color:var(--text-soft);
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects{ background:var(--ivory); }
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  @media (max-width:920px){ .proj-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:620px){ .proj-grid{ grid-template-columns:1fr; } }
+  .proj-card{
+    background:var(--paper);
+    border-radius:var(--radius);
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+    border:1px solid transparent;
+  }
+  .proj-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 32px rgba(61,15,31,0.1);
+    border-color:var(--gold-soft);
+  }
+  .proj-tag{
+    font-family:'DM Mono', monospace;
+    font-size:0.68rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--accent-text);
+    background:var(--accent-tag-bg);
+    padding:4px 10px;
+    border-radius:999px;
+    width:fit-content;
+  }
+  .proj-card h3{ font-size:1.12rem; color:var(--heading); margin-top:4px; }
+  .proj-card p{ font-size:0.9rem; color:var(--text-soft); margin:0; }
+  .proj-result{
+    margin-top:auto;
+    padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-family:'DM Mono', monospace;
+    font-size:0.74rem;
+    color:var(--gold);
+    font-weight:700;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:linear-gradient(165deg, var(--wine-deep), var(--wine) 80%);
+    color:var(--on-dark);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact .section-head{ margin:0 auto 40px; text-align:center; }
+  .contact .section-head p{ color:#EFD9DC; }
+  .contact h2{ color:var(--on-dark); }
+  .contact-links{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    position:relative;
+    z-index:2;
+  }
+  .c-link{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(251,246,241,0.08);
+    border:1px solid rgba(251,246,241,0.2);
+    padding:14px 24px;
+    border-radius:999px;
+    text-decoration:none;
+    color:var(--on-dark);
+    font-size:0.92rem;
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .c-link:hover{ background:var(--gold); color:var(--wine-deep); transform:translateY(-2px); }
+  .c-link svg{ width:17px; height:17px; flex-shrink:0; }
+
+  footer{
+    background:var(--wine-deep);
+    color:rgba(251,246,241,0.5);
+    text-align:center;
+    padding:26px 0;
+    font-size:0.8rem;
+    font-family:'DM Mono', monospace;
+  }
+
+  /* reveal animation */
+  .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Raisha N.</a>
+    <nav class="links" id="navLinks">
+      <a href="#tentang">Tentang</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#asesmen">Asesmen</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema gelap/terang" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.51 4.93l1.41-1.42L7.05 5.64 5.64 7.05 3.51 4.93zM16.95 18.36l1.41-1.41 2.12 2.12-1.41 1.41-2.12-2.12zM1 11h3v2H1v-2zm19 0h3v2h-3v-2zM3.51 19.07l2.13-2.12 1.41 1.41-2.12 2.12-1.42-1.41zM16.95 5.64l2.12-2.13 1.41 1.42-2.12 2.12-1.41-1.41z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.74 14.51A8.5 8.5 0 0 1 9.49 3.26a.6.6 0 0 0-.69-.83A10 10 0 1 0 21.57 15.2a.6.6 0 0 0-.83-.69z"/></svg>
+      </button>
+      <a href="#kontak" class="nav-cta">Hubungi Saya</a>
+      <button class="burger" id="burgerBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <svg class="thread" viewBox="0 0 1200 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M -50 480 C 200 380, 350 560, 600 420 S 950 280, 1250 380" stroke="#DDC082" stroke-width="1.2" fill="none"/>
+    <path d="M -50 120 C 250 60, 380 220, 650 140 S 1000 40, 1250 120" stroke="#EFD9DC" stroke-width="1" fill="none" opacity="0.5"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img src="hero-pic.jpeg" alt="Foto Raisha Nur Rahmani" class="profile-photo">
+        </div>
+        <span class="photo-tag">Yogyakarta, Indonesia</span>
+      </div>
+      <div>
+        <div class="hero-eyebrow">Human Capital · Organizational Development · Assesment · Copywriting</div>
+        <h1 class="hero-name">Raisha Nur<br><em>Rahmani</em></h1>
+        <p class="hero-role">Mahasiswi Psikologi Universitas Islam Indonesia yang membantu organisasi merekrut, menilai, dan mengembangkan orang yang tepat — lewat proses seleksi yang terstruktur, data yang rapi, dan asesmen yang bisa dipertanggungjawabkan.</p>
+        <div class="hero-cta">
+          <a href="#kontak" class="btn btn-primary">Hubungi Saya</a>
+          <a href="#pengalaman" class="btn btn-ghost">Lihat Pengalaman</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div>
+        <div class="stat-num">3.91</div>
+        <div class="stat-label">IPK saat ini</div>
+      </div>
+      <div>
+        <div class="stat-num">100+</div>
+        <div class="stat-label">kandidat di-screening, 16 terpilih</div>
+      </div>
+      <div>
+        <div class="stat-num">547</div>
+        <div class="stat-label">skor TOEFL</div>
+      </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">alat asesmen psikologis dikuasai</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="tentang">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-quote reveal">
+        "Bagi saya, proses rekrutmen yang baik bukan soal mengisi posisi secepatnya — tapi soal menemukan orang yang tepat, dengan cara yang adil dan terukur."
+      </div>
+      <div class="about-body reveal">
+        <span class="eyebrow">Tentang Saya</span>
+        <p>Mahasiswi <strong> Psikologi </strong>di Universitas Islam Indonesia yang memiliki ketertarikan pada Human Capital - Organizational Development - Assesment - Copywriting.
+        </p>        
+        <p>Selama kuliah, saya aktif mendukung proses rekrutmen, seleksi, evaluasi kinerja, dan pengembangan SDM — mulai dari menyusun instrumen evaluasi, melakukan screening kandidat, hingga mengolah data kinerja sebagai dasar rekomendasi pengembangan.</p>
+        <p>Saya juga terbiasa mengadministrasikan dan menginterpretasikan alat asesmen psikologis (WAIS, IST, PAULI, SSCT, DASS), serta menulis laporan asesmen dan artikel edukatif psikologi secara sistematis. Saat ini saya ingin mengenal dunia kerja lebih dalam melalui kacamata Psikologi Industri & Organisasi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PENDIDIKAN + SKILLS ===== -->
+<section class="split" id="pendidikan">
+  <div class="wrap">
+    <div class="split-grid">
+      <div class="edu-card reveal">
+        <span class="eyebrow">Pendidikan</span>
+        <h3 style="font-family:'Poppins', sans-serif; font-weight: 600;">Universitas Islam Indonesia</h3>
+        <div class="meta">Fakultas Psikologi, Prodi Psikologi — Angkatan 2023</div>
+        <div class="edu-stat">
+          <b>3.91</b>
+          <span style="font-size:0.85rem; color:var(--muted);">IPK kumulatif</span>
+        </div>
+        <ul class="lang-list">
+          <li><span>Bahasa Indonesia</span><span>Native</span></li>
+          <li><span>Bahasa Inggris</span><span>TOEFL 547</span></li>
+          <li><span>BISINDO (Tingkat 2)</span><span>Nilai B</span></li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">Keterampilan</span>
+        <h2 class="skills-title">Kombinasi people skills, asesmen, dan data</h2>
+        <div class="skills-cols" style="margin-top:30px;">
+          <div class="skill-group">
+            <h4>HR & People Operations</h4>
+            <ul>
+              <li>Screening CV berbasis kriteria</li>
+              <li>Penyusunan & evaluasi KPI</li>
+              <li>Evaluasi kinerja</li>
+              <li>Administrasi SDM</li>
+              <li>Job analysis & job description</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Data & Tools</h4>
+            <ul>
+              <li>Microsoft Excel (filter, rumus dasar)</li>
+              <li>Google Forms & Google Docs</li>
+              <li>Jamovi (dasar)</li>
+              <li>Penyusunan laporan evaluasi</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Asesmen Psikologis</h4>
+            <ul>
+              <li>WAIS & IST</li>
+              <li>PAULI</li>
+              <li>SSCT</li>
+              <li>DASS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4>Kompetensi Pendukung</h4>
+            <ul>
+              <li>Komunikasi interpersonal</li>
+              <li>Public speaking</li>
+              <li>Manajemen waktu</li>
+              <li>Kerja tim lintas divisi</li>
+              <li>Penulisan artikel & copywriting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PENGALAMAN ===== -->
+<section class="exp" id="pengalaman">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Rekam Jejak</span>
+      <h2 style="font-family:'Poppins', sans-serif; font-weight: 600;">Pengalaman Kerja & Organisasi</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="t-dot"></div>
+        <div class="t-period">Feb — Mar 2026</div>
+        <h3>Magang, Biro SDM Bagian Pengembangan</h3>
+        <div class="org">Kementerian PPN/BAPPENAS</div>
+        <ul>
+          <li>Menggunakan HRIS SISTRANAS untuk memahami proses rekrutmen, manajemen talenta, dan pengembangan jenjang karier karyawan.</li>
+          <li>Merancang, menyusun, dan merevisi dokumen Prosedur Operasional Standar (POS AP) untuk Assessment Center internal.</li>
+          <li>Melakukan gap analysis pada tahap konseptual Assessment Center untuk memetakan risiko inkonsistensi implementasi.</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-dot"></div>
+        <div class="t-period">2025 — Sekarang</div>
+        <h3>Student Staff, Prodi Psikologi UII</h3>
+        <div class="org">Universitas Islam Indonesia</div>
+        <ul>
+          <li>Mendukung administrasi akademik, termasuk surat pengantar magang dan perizinan mahasiswa.</li>
+          <li>Menyusun artikel dan berita kegiatan institusi untuk website resmi psychology.uii.ac.id.</li>
+          <li>Terlibat dalam pelaksanaan kuliah tamu, expo, dan ekskursi budaya prodi.</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-dot"></div>
+        <div class="t-period">2025</div>
+        <h3>Kepala Divisi Pengembangan SDM (PSDM)</h3>
+        <div class="org">PIK-M AUSHAF UII</div>
+        <ul>
+          <li>Melakukan screening lebih dari 100 kandidat staf & magang, menghasilkan 16 kandidat terpilih.</li>
+          <li>Mengatur program training internal dengan 100% kepuasan dan 100% keaktifan peserta.</li>
+          <li>Menyusun, memantau, dan mengevaluasi KPI bulanan untuk seluruh divisi organisasi.</li>
+          <li>Melaksanakan upgrading pengembangan diri pasca-demisioner — 70% kepuasan, 80% peningkatan pemahaman peserta.</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-dot"></div>
+        <div class="t-period">2025</div>
+        <h3>Co-Fasilitator Study Skills</h3>
+        <div class="org">Prodi Psikologi UII</div>
+        <ul>
+          <li>Mendukung pelaksanaan program pengembangan mahasiswa baru selama 7 sesi.</li>
+          <li>Mengelola absensi dan membantu peserta memahami materi secara mendalam.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ASESMEN ===== -->
+<section class="assess" id="asesmen">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Praktikum Asesmen Dewasa</span>
+      <h2 style="font-family:'Poppins', sans-serif; font-weight: 600;">Pengalaman Melakukan Asesmen</h2>
+      <p>Mengadministrasikan, melakukan skoring, dan menginterpretasikan alat ukur psikologis untuk kebutuhan profil individu.</p>
+    </div>
+
+    <div class="assess-grid reveal">
+      <div class="assess-card">
+        <div class="tool">WAIS</div>
+        <div class="desc">Inteligensi & kemampuan kognitif</div>
+      </div>
+      <div class="assess-card">
+        <div class="tool">IST</div>
+        <div class="desc">Struktur intelegensi</div>
+      </div>
+      <div class="assess-card">
+        <div class="tool">PAULI</div>
+        <div class="desc">Ketahanan & kecepatan kerja</div>
+      </div>
+      <div class="assess-card">
+        <div class="tool">SSCT</div>
+        <div class="desc">Dinamika kepribadian</div>
+      </div>
+      <div class="assess-card">
+        <div class="tool">DASS</div>
+        <div class="desc">Depresi, kecemasan, stres</div>
+      </div>
+    </div>
+
+    <div class="assess-note reveal">
+      Menyusun laporan hasil asesmen secara sistematis — mencakup analisis profil individu, kesimpulan psikologis, dan rekomendasi tindak lanjut. Meraih nilai <strong>A-</strong> pada Mata Kuliah Asesmen Dewasa.
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROYEK ===== -->
+<section class="projects" id="proyek">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Studi Kasus</span>
+      <h2 style="font-family:'Poppins', sans-serif; font-weight: 600;">Proyek Pilihan</h2>
+      <p>Proyek kuliah, riset, dan inisiatif menulis yang mencerminkan minat saya pada HR, asesmen, dan komunikasi.</p>
+    </div>
+
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <span class="proj-tag">Manajemen Talenta</span>
+        <h3>Analisis Jabatan & Strategi Rekrutmen</h3>
+        <p>Merancang job analysis, job description, dan job specification untuk 3 posisi kunci (Sales Force, Digital Marketing, E-commerce), dilengkapi strategi sourcing multi-channel.</p>
+        <div class="proj-result">→ Strategi rekrutmen berbasis komunitas</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <span class="proj-tag">Psikologi I&O</span>
+        <h3>Wawancara Sistem Kompensasi</h3>
+        <p>In-depth interview dengan Manager PPIC PT Super Steel Karawang & Store Manager Starbucks Indonesia untuk menganalisis struktur Core & Fringe Compensation.</p>
+        <div class="proj-result">→ Perbandingan kebijakan manufaktur vs F&B</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <span class="proj-tag">Kewirausahaan</span>
+        <h3>Intervensi Wellbeing Berbasis Produk</h3>
+        <p>Merancang produk minuman herbal & aromaterapi untuk menurunkan stres kerja, lengkap dengan analisis segmentasi pasar psikografis dan SWOT bisnis.</p>
+        <div class="proj-result">→ Finalis 20 Besar Lomba Kewirausahaan 2025</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <span class="proj-tag">Riset Eksperimental</span>
+        <h3>Positive Mood Induction & Performa Kognitif</h3>
+        <p>Menyusun naskah akademik dan mempresentasikan riset kuasi-eksperimental mengenai pengaruh suasana hati positif terhadap efisiensi fungsi eksekutif mental.</p>
+        <div class="proj-result">→ Dipresentasikan di KREASI 2025</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <span class="proj-tag">Konten & SEO</span>
+        <h3>Blog Edukasi Psikologi — "Manusia Berdaya"</h3>
+        <p>Menulis dan mempublikasikan artikel SEO seputar kecemasan, depresi, dan kesehatan mental di Blogspot dan WordPress untuk audiens umum.</p>
+        <div class="proj-result">→ Dipublikasikan rutin sejak 2025</div>
+      </div>
+
+      <div class="proj-card reveal">
+        <span class="proj-tag">Copywriting</span>
+        <h3>Promotor Lomba Menulis Cerpen</h3>
+        <p>Merancang strategi promosi event lomba menulis cerita pendek untuk dua penerbit melalui Instagram dan copywriting persuasif.</p>
+        <div class="proj-result">→ 700+ peserta gabungan dari dua kampanye</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAK ===== -->
+<section class="contact" id="kontak">
+  <svg class="thread" viewBox="0 0 1200 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0.25;">
+    <path d="M -50 80 C 250 20, 380 180, 650 100 S 1000 0, 1250 80" stroke="#DDC082" stroke-width="1" fill="none"/>
+  </svg>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Mari Terhubung</span>
+      <h2>Tertarik berdiskusi soal HR, asesmen, atau kolaborasi?</h2>
+      <p>Saya terbuka untuk peluang magang, riset, maupun kolaborasi proyek di bidang human capital dan psikologi industri & organisasi.</p>
+    </div>
+    <div class="contact-links reveal">
+      <a class="c-link" href="https://wa.me/6281278132211" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.86.5 3.6 1.37 5.1L2 22l4.97-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.43-4.4-1.18l-.31-.18-3.07.83.83-3-.2-.32A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.6c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41-.14-.01-.3-.01-.46-.01s-.42.06-.64.3c-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg>
+        0812-7813-2211
+      </a>
+      <a class="c-link" href="mailto:raishanurrahmani@gmail.com">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+        raishanurrahmani@gmail.com
+      </a>
+      <a class="c-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18V9.75H5.67V18h2.67zM7 8.67a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zM18.34 18v-4.45c0-2.38-1.27-3.49-2.96-3.49-1.36 0-1.97.75-2.31 1.27V9.75H10.4c.03.7 0 8.25 0 8.25h2.67v-4.6c0-.25.02-.5.1-.67.2-.5.66-1.03 1.44-1.03.99 0 1.46.76 1.46 1.86V18h2.27z"/></svg>
+        LinkedIn
+      </a>
+      <a class="c-link" href="https://wordpress.com/reader/users/rahmaniraisha" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12a9 9 0 1 1 18 0 9 9 0 0 1-18 0zm9-7a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM7.5 9.2 9.8 16h.6l1.5-4.4L13.4 16h.6l2.5-7.3-.9-.2-1.8 5.3-1.4-4.3h-.6L10 14.8 8.4 9z"/></svg>
+        Blog "Manusia Berdaya"
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Raisha Nur Rahmani — Dibuat dengan ketelitian, seperti laporan asesmen yang baik.
+</footer>
+
+<script>
+  // ---- mobile nav ----
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    burger.classList.toggle('active', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.classList.remove('active');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== burger && !burger.contains(e.target)) {
+      navLinks.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ---- theme toggle (dark / light) ----
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+  themeToggle.setAttribute('aria-pressed', String(prefersDark));
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    themeToggle.setAttribute('aria-pressed', String(!isDark));
+  });
+
+  // ---- scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
