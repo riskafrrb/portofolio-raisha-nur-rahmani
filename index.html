@@ -693,7 +693,6 @@
     font-family:'DM Mono', monospace;
   }
 
-  /* reveal animation */
   .reveal{
     opacity:0;
     transform:translateY(22px);
@@ -859,7 +858,7 @@
   </div>
 </section>
 
-<!-- ===== PENGALAMAN ===== -->
+<!-- PENGALAMAN -->
 <section class="exp" id="pengalaman">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1049,7 +1048,7 @@
 </footer>
 
 <script>
-  // ---- mobile nav ----
+  //  mobile nav 
   const burger = document.getElementById('burgerBtn');
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => {
@@ -1070,7 +1069,7 @@
     }
   });
 
-  // ---- theme toggle (dark / light) ----
+  // theme toggle (dark / light) 
   const root = document.documentElement;
   const themeToggle = document.getElementById('themeToggle');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -1083,7 +1082,7 @@
     themeToggle.setAttribute('aria-pressed', String(!isDark));
   });
 
-  // ---- scroll reveal ----
+  // scroll reveal 
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
