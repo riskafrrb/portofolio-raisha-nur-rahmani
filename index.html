@@ -533,6 +533,241 @@
     width:1.5px;
     background:var(--line);
   }
+  /* ---------- EXPERIENCE CATEGORY BUTTONS ---------- */
+
+.experience-buttons{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+}
+
+@media (max-width:880px){
+  .experience-buttons{
+    grid-template-columns:1fr;
+  }
+}
+
+.experience-button{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:270px;
+  padding:30px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  text-decoration:none;
+  color:var(--ink);
+  overflow:hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.experience-button:hover{
+  transform:translateY(-6px);
+  border-color:var(--gold-soft);
+  box-shadow:0 18px 32px rgba(61,15,31,0.10);
+}
+
+.experience-button-number{
+  font-family:'DM Mono', monospace;
+  font-size:0.72rem;
+  letter-spacing:0.08em;
+  color:var(--gold);
+  font-weight:700;
+  margin-bottom:auto;
+}
+
+.experience-button-content{
+  margin-top:48px;
+}
+
+.experience-button h3{
+  font-family:'Poppins', sans-serif;
+  font-size:1.25rem;
+  font-weight:600;
+  line-height:1.3;
+  color:var(--heading);
+  margin:0;
+}
+
+.experience-button p{
+  font-size:0.88rem;
+  line-height:1.65;
+  color:var(--text-soft);
+  margin:12px 0 0;
+  max-width:34ch;
+}
+
+.experience-arrow{
+  position:absolute;
+  right:28px;
+  bottom:25px;
+  width:38px;
+  height:38px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--wine);
+  font-size:1.1rem;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.experience-button:hover .experience-arrow{
+  background:var(--wine);
+  color:var(--on-dark);
+  transform:translateX(3px);
+}
+
+
+/* ---------- EXPERIENCE DETAIL ---------- */
+
+.experience-detail{
+  padding:108px 0;
+}
+
+@media (max-width:720px){
+  .experience-detail{
+    padding:72px 0;
+  }
+}
+
+
+/* Background tiap kategori */
+
+.hc-detail{
+  background:var(--paper);
+}
+
+.copy-detail{
+  background:var(--ivory);
+}
+
+.assess-detail{
+  background:var(--wine-tint);
+}
+
+
+/* Grid kartu */
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+}
+
+@media (max-width:720px){
+  .detail-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* Card */
+
+.detail-card{
+  position:relative;
+  background:var(--ivory);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:30px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.detail-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--gold-soft);
+  box-shadow:0 18px 32px rgba(61,15,31,0.10);
+}
+
+.detail-period{
+  font-family:'DM Mono', monospace;
+  font-size:0.72rem;
+  letter-spacing:0.06em;
+  color:var(--gold);
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.detail-card h3{
+  font-size:1.2rem;
+  color:var(--heading);
+  margin-top:8px;
+  line-height:1.3;
+}
+
+.detail-org{
+  color:var(--muted);
+  font-size:0.88rem;
+  margin-top:4px;
+}
+
+.detail-card ul{
+  margin:18px 0 20px;
+  padding-left:18px;
+  color:var(--text-soft);
+}
+
+.detail-card li{
+  margin-bottom:8px;
+  font-size:0.92rem;
+  line-height:1.6;
+}
+
+.detail-card li:last-child{
+  margin-bottom:0;
+}
+
+
+/* Tags */
+
+.detail-tag{
+  display:inline-block;
+  margin:5px 4px 0 0;
+  padding:5px 11px;
+  border-radius:999px;
+  background:var(--accent-tag-bg);
+  color:var(--accent-text);
+  font-family:'DM Mono', monospace;
+  font-size:0.66rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+
+/* Mobile */
+
+@media (max-width:560px){
+
+  .experience-button{
+    min-height:230px;
+    padding:25px;
+  }
+
+  .experience-button-content{
+    margin-top:35px;
+  }
+
+  .experience-button h3{
+    font-size:1.12rem;
+  }
+
+  .detail-card{
+    padding:24px;
+  }
+
+}
   .t-item{
     position:relative;
     padding-left:48px;
@@ -744,7 +979,7 @@
       <div>
         <div class="hero-eyebrow">Human Capital · Organizational Development · Assesment · Copywriting</div>
         <h1 class="hero-name">Raisha Nur<br><em>Rahmani</em></h1>
-        <p class="hero-role">Mahasiswi Psikologi Universitas Islam Indonesia yang memiliki kompetensi dalam mengelola proses rekrutmen, penilaian KPI, hingga pengembangan potensi talenta melalui pendekatan yang terstruktur serta asesmen yang akuntabel.</p>
+        <p class="hero-role">Mahasiswi Psikologi Universitas Islam Indonesia yang memiliki kompetensi dalam Human Resources dan Copywriting, dengan pengalaman dalam mengelola proses rekrutmen, penilaian KPI, serta pengembangan potensi talenta melalui pendekatan yang terstruktur dan berbasis asesmen. Memiliki kemampuan dalam menulis dan mengembangkan konten komunikasi yang informatif, kreatif, dan sesuai dengan karakteristik audiens melalui riset dan penyusunan pesan yang efektif.</p>
         <div class="hero-cta">
           <a href="#kontak" class="btn btn-primary">Hubungi Saya</a>
           <a href="#pengalaman" class="btn btn-ghost">Lihat Pengalaman</a>
@@ -754,7 +989,7 @@
 
     <div class="stats">
       <div>
-        <div class="stat-num">3.91</div>
+        <div class="stat-num">3.92</div>
         <div class="stat-label">IPK saat ini</div>
       </div>
       <div>
@@ -782,10 +1017,10 @@
       </div>
       <div class="about-body reveal">
         <span class="eyebrow">Tentang Saya</span>
-        <p>Mahasiswi <strong> Psikologi </strong>di Universitas Islam Indonesia yang memiliki ketertarikan pada Human Capital, Organizational Development, Assesment, dan Copywriting.
+        <p>Mahasiswi <strong> Psikologi </strong> di Universitas Islam Indonesia yang memiliki ketertarikan pada Human Capital, Organizational Development, Assessment, dan Copywriting.
         </p>        
-        <p>Selama kuliah, saya aktif mendukung proses rekrutmen, seleksi, evaluasi kinerja, dan pengembangan SDM — mulai dari menyusun instrumen evaluasi, melakukan screening kandidat, hingga mengolah data kinerja sebagai dasar rekomendasi pengembangan.</p>
-        <p>Saya juga terbiasa mengadministrasikan dan menginterpretasikan alat asesmen psikologis (WAIS, IST, PAULI, SSCT, DASS), serta menulis laporan asesmen dan artikel edukatif psikologi secara sistematis. Saat ini saya ingin mengenal dunia kerja lebih dalam melalui kacamata Psikologi Industri & Organisasi.</p>
+        <p>Memiliki pengalaman dalam mendukung proses rekrutmen, seleksi, evaluasi kinerja, dan pengembangan SDM, termasuk screening kandidat, penyusunan instrumen evaluasi, serta pengolahan data kinerja. Terbiasa melakukan administrasi dan interpretasi asesmen psikologis seperti WAIS, IST, PAULI, SSCT, dan DASS serta menyusun laporan asesmen secara sistematis.</p>
+        <p>Di bidang Copywriting, Saya terbiasa melakukan riset dan mengembangkan informasi menjadi artikel edukatif, konten informatif, dan materi komunikasi digital yang jelas, menarik, dan sesuai dengan karakteristik audiens. Menggabungkan pemahaman psikologi dengan kemampuan analitis dan komunikasi tertulis untuk menghasilkan konten maupun pekerjaan yang terstruktur dan relevan.</p>
       </div>
     </div>
   </div>
@@ -800,7 +1035,7 @@
         <h3 style="font-family:'Poppins', sans-serif; font-weight: 600;">Universitas Islam Indonesia</h3>
         <div class="meta">Fakultas Psikologi, Prodi Psikologi — Angkatan 2023</div>
         <div class="edu-stat">
-          <b style="font-family:'Poppins', sans-serif;">3.91</b>
+          <b style="font-family:'Poppins', sans-serif;">3.92</b>
           <span style="font-size:0.85rem; color:var(--muted);">IPK kumulatif</span>
         </div>
         <ul class="lang-list">
@@ -831,6 +1066,7 @@
               <li>Google Forms & Google Docs</li>
               <li>Jamovi (dasar)</li>
               <li>Penyusunan laporan evaluasi</li>
+              <li>Membuat artikel berformat SEO</li>
             </ul>
           </div>
           <div class="skill-group">
@@ -847,7 +1083,6 @@
             <ul>
               <li>Komunikasi interpersonal</li>
               <li>Public speaking</li>
-              <li>Manajemen waktu</li>
               <li>Kerja tim lintas divisi</li>
               <li>Penulisan artikel & copywriting</li>
             </ul>
@@ -859,157 +1094,423 @@
 </section>
 
 <!-- PENGALAMAN -->
+<!-- PENGALAMAN -->
 <section class="exp" id="pengalaman">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Rekam Jejak</span>
-      <h2 style="font-family:'Poppins', sans-serif; font-weight: 600;">Pengalaman Kerja & Organisasi</h2>
+      <h2 style="font-family:'Poppins', sans-serif; font-weight:600;">
+        Pengalaman Kerja & Organisasi
+      </h2>
+      <p>
+        Pengalaman dan kompetensi dalam bidang
+        Human Capital & Human Resources, Copywriting, dan Asesmen Psikologis.
+      </p>
     </div>
 
-    <div class="timeline">
-      <div class="t-item reveal">
-        <div class="t-dot"></div>
-        <div class="t-period">Feb — Mar 2026</div>
-        <h3 style="font-family:'Poppins', sans-serif;">Magang, Biro SDM Bagian Pengembangan</h3>
-        <div class="org">Kementerian PPN/BAPPENAS</div>
-        <ul>
-          <li>Menggunakan HRIS SISTRANAS untuk memahami proses rekrutmen, manajemen talenta, dan pengembangan jenjang karier karyawan.</li>
-          <li>Merancang, menyusun, dan merevisi dokumen Prosedur Operasional Standar (POS AP) untuk Assessment Center internal.</li>
-          <li>Melakukan gap analysis pada tahap konseptual Assessment Center untuk memetakan risiko inkonsistensi implementasi.</li>
-        </ul>
-      </div>
+    <div class="experience-buttons reveal">
 
-      <div class="t-item reveal">
-        <div class="t-dot"></div>
-        <div class="t-period">2025 — Sekarang</div>
-        <h3 style="font-family:'Poppins', sans-serif;">Student Staff, Prodi Psikologi UII</h3>
-        <div class="org">Universitas Islam Indonesia</div>
-        <ul>
-          <li>Mendukung administrasi akademik, termasuk surat pengantar magang dan perizinan mahasiswa.</li>
-          <li>Menyusun artikel dan berita kegiatan institusi untuk website resmi psychology.uii.ac.id.</li>
-          <li>Terlibat dalam pelaksanaan kuliah tamu, expo, dan ekskursi budaya prodi.</li>
-        </ul>
-      </div>
+      <a href="#human-capital" class="experience-button">
+        <div class="experience-button-number">01</div>
+        <div class="experience-button-content">
+          <h3>Human Capital & Human Resources</h3>
+          <p>
+            Pengalaman dalam pengembangan SDM, manajemen talenta,
+            organisasi, dan psikologi industri & organisasi.
+          </p>
+        </div>
+        <span class="experience-arrow">→</span>
+      </a>
 
-      <div class="t-item reveal">
-        <div class="t-dot"></div>
-        <div class="t-period">2025</div>
-        <h3 style="font-family:'Poppins', sans-serif;">Kepala Divisi Pengembangan SDM (PSDM)</h3>
-        <div class="org">PIK-M AUSHAF UII</div>
-        <ul>
-          <li>Melakukan screening lebih dari 100 kandidat staf & magang, menghasilkan 16 kandidat terpilih.</li>
-          <li>Mengatur program training internal dengan 100% kepuasan dan 100% keaktifan peserta.</li>
-          <li>Menyusun, memantau, dan mengevaluasi KPI bulanan untuk seluruh divisi organisasi.</li>
-          <li>Melaksanakan upgrading pengembangan diri pasca-demisioner — 70% kepuasan, 80% peningkatan pemahaman peserta.</li>
-        </ul>
-      </div>
+      <a href="#copywriter" class="experience-button">
+        <div class="experience-button-number">02</div>
+        <div class="experience-button-content">
+          <h3>Copywriter</h3>
+          <p>
+            Pengalaman dalam copywriting, konten & SEO, kewirausahaan,
+            serta riset eksperimental.
+          </p>
+        </div>
+        <span class="experience-arrow">→</span>
+      </a>
 
-      <div class="t-item reveal">
-        <div class="t-dot"></div>
-        <div class="t-period">2025</div>
-        <h3 style="font-family:'Poppins', sans-serif;">Co-Fasilitator Study Skills</h3>
-        <div class="org">Prodi Psikologi UII</div>
-        <ul>
-          <li>Mendukung pelaksanaan program pengembangan mahasiswa baru selama 7 sesi.</li>
-          <li>Mengelola absensi dan membantu peserta memahami materi secara mendalam.</li>
-        </ul>
-      </div>
+      <a href="#asesmen" class="experience-button">
+        <div class="experience-button-number">03</div>
+        <div class="experience-button-content">
+          <h3>Asesmen Psikologis</h3>
+          <p>
+            Pengalaman dalam melaksanakan administrasi asesmen psikologis.
+          </p>
+        </div>
+        <span class="experience-arrow">→</span>
+      </a>
+
     </div>
   </div>
 </section>
 
-<!-- ===== ASESMEN ===== -->
+
+<!-- HUMAN CAPITAL & HUMAN RESOURCES -->
+<section class="experience-detail hc-detail" id="human-capital">
+  <div class="wrap">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">01 — Human Capital</span>
+      <h2 style="font-family:'Poppins', sans-serif; font-weight:600;">
+        Human Capital & Human Resources
+      </h2>
+      <p>
+        Pengalaman yang berfokus pada pengembangan manusia,
+        pengelolaan SDM, manajemen talenta, dan psikologi industri &
+        organisasi.
+      </p>
+    </div>
+
+    <div class="detail-grid">
+
+      <!-- BAPPENAS -->
+      <div class="detail-card reveal">
+        <div class="detail-period">Feb — Mar 2026</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Magang, Biro SDM Bagian Pengembangan
+        </h3>
+        <div class="detail-org">Kementerian PPN/BAPPENAS</div>
+
+        <ul>
+          <li>
+            Menggunakan HRIS SISTRANAS untuk memahami proses rekrutmen,
+            manajemen talenta, dan pengembangan jenjang karier karyawan.
+          </li>
+          <li>
+            Merancang, menyusun, dan merevisi dokumen Prosedur Operasional
+            Standar (POS AP) untuk Assessment Center internal.
+          </li>
+          <li>
+            Melakukan gap analysis pada tahap konseptual Assessment Center
+            untuk memetakan risiko inkonsistensi implementasi.
+          </li>
+        </ul>
+
+        <div class="detail-tag">HR Development</div>
+        <div class="detail-tag">Talent Management</div>
+        <div class="detail-tag">HRIS</div>
+      </div>
+
+
+      <!-- PIK-M -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2025</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Kepala Divisi Pengembangan SDM (PSDM)
+        </h3>
+        <div class="detail-org">PIK-M AUSHAF UII</div>
+
+        <ul>
+          <li>
+            Melakukan screening lebih dari 100 kandidat staf & magang,
+            menghasilkan 16 kandidat terpilih.
+          </li>
+          <li>
+            Mengatur program training internal dengan 100% kepuasan
+            dan 100% keaktifan peserta.
+          </li>
+          <li>
+            Menyusun, memantau, dan mengevaluasi KPI bulanan untuk
+            seluruh divisi organisasi.
+          </li>
+          <li>
+            Melaksanakan upgrading pengembangan diri pasca-demisioner —
+            70% kepuasan dan 80% peningkatan pemahaman peserta.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Recruitment</div>
+        <div class="detail-tag">Training</div>
+        <div class="detail-tag">KPI</div>
+      </div>
+
+
+      <!-- STUDY SKILLS -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2025</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Co-Fasilitator Study Skills
+        </h3>
+        <div class="detail-org">Prodi Psikologi UII</div>
+
+        <ul>
+          <li>
+            Mendukung pelaksanaan program pengembangan mahasiswa baru
+            selama 7 sesi.
+          </li>
+          <li>
+            Mengelola absensi dan membantu peserta memahami materi
+            secara mendalam.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Facilitation</div>
+        <div class="detail-tag">Student Development</div>
+      </div>
+
+
+      <!-- MANAJEMEN TALENTA -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2026</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Manajemen Talenta
+        </h3>
+        <div class="detail-org">Human Capital & Human Resources</div>
+
+        <ul>
+          <li>
+            Pengalaman dan pemahaman mengenai proses manajemen talenta
+            dalam konteks pengembangan sumber daya manusia.
+          </li>
+          <li>
+            Memahami keterkaitan antara identifikasi potensi,
+            pengembangan kompetensi, dan jenjang karier.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Talent Management</div>
+        <div class="detail-tag">Employee Development</div>
+      </div>
+
+
+      <!-- PSIKOLOGI I&O -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2025</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Psikologi Industri & Organisasi
+        </h3>
+        <div class="detail-org">Human Capital & Human Resources</div>
+
+        <ul>
+          <li>
+            Menerapkan perspektif psikologi industri dan organisasi
+            dalam memahami pengelolaan serta pengembangan sumber daya manusia.
+          </li>
+          <li>
+            Memahami penerapan konsep psikologi dalam konteks organisasi,
+            pengembangan karyawan, dan pengelolaan talenta.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Psikologi I&O</div>
+        <div class="detail-tag">Human Resources</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- COPYWRITER -->
+<section class="experience-detail copy-detail" id="copywriter">
+  <div class="wrap">
+
+    <div class="section-head reveal">
+      <span class="eyebrow">02 — Copywriter</span>
+      <h2 style="font-family:'Poppins', sans-serif; font-weight:600;">
+        Copywriter
+      </h2>
+      <p>
+        Pengalaman dalam mengembangkan ide, melakukan riset,
+        menyusun pesan, dan menghasilkan konten yang komunikatif.
+      </p>
+    </div>
+
+    <div class="detail-grid">
+
+      <!-- COPYWRITING -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2025</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Pengembangan Konten Digital melalui WordPress dan Blogspot
+        </h3>
+        <div class="detail-org">Writing & Creative Content</div>
+
+        <ul>
+          <li>
+            Menulis artikel edukatif mengenai kesehatan mental, seperti depresi, kecemasan, strategi pencegahan, dan praktik perawatan diri.  
+          </li>
+          <li>
+            Membuat dan mempublikasikan konten promosi program studi UII serta berbagai kegiatan akademik kepada khalayak yang lebih luas.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Copywriting</div>
+        <div class="detail-tag">Creative Writing</div>
+      </div>
+
+
+      <!-- KONTEN SEO -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2025-sekarang</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Copywriter
+        </h3>
+        <div class="detail-org">Student Staff Prodi Psikologi UII</div>
+
+        <ul>
+          <li>
+            Mengembangkan konten dengan mempertimbangkan kebutuhan
+            audiens dan struktur informasi.
+          </li>
+          <li>
+            Menerapkan prinsip dasar SEO dalam penyusunan konten
+            agar informasi lebih mudah ditemukan dan dipahami.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Content</div>
+        <div class="detail-tag">SEO</div>
+      </div>
+
+
+      <!-- KEWIRAUSAHAAN -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2025</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Kewirausahaan
+        </h3>
+        <div class="detail-org">Pengembangan Produk & Bisnis</div>
+
+        <ul>
+          <li>
+            Mengembangkan konsep produk dan strategi komunikasi
+            dalam proyek kewirausahaan.
+          </li>
+          <li>
+            Menyusun materi komunikasi produk dengan mempertimbangkan
+            karakteristik target konsumen.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Entrepreneurship</div>
+        <div class="detail-tag">Brand Communication</div>
+      </div>
+
+
+      <!-- RISET EKSPERIMENTAL -->
+      <div class="detail-card reveal">
+        <div class="detail-period">2025</div>
+        <h3 style="font-family:'Poppins', sans-serif;">
+          Riset Eksperimental
+        </h3>
+        <div class="detail-org">Research & Content Development</div>
+
+        <ul>
+          <li>
+            Melakukan proses riset untuk memahami permasalahan,
+            mengembangkan eksperimen, dan menyusun hasil penelitian berbasis bukti ilmiah.
+          </li>
+          <li>
+            Mengolah hasil riset menjadi informasi yang lebih sistematis
+            dan komunikatif.
+          </li>
+        </ul>
+
+        <div class="detail-tag">Research</div>
+        <div class="detail-tag">Experimental Research</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ASESMEN -->
 <section class="assess" id="asesmen">
   <div class="wrap">
+
     <div class="section-head reveal">
-      <span class="eyebrow">Praktikum Asesmen Dewasa</span>
-      <h2 style="font-family:'Poppins', sans-serif; font-weight: 600;">Pengalaman Melakukan Asesmen</h2>
-      <p>Mengadministrasikan, melakukan skoring, dan menginterpretasikan alat ukur psikologis untuk kebutuhan profil individu.</p>
+      <span class="eyebrow">03 — Asesmen Psikologi</span>
+
+      <h2 style="font-family:'Poppins', sans-serif; font-weight:600;">
+        Pengalaman Melakukan Asesmen
+      </h2>
+
+      <p>
+        Mengadministrasikan, melakukan skoring, dan menginterpretasikan
+        alat ukur psikologis untuk kebutuhan profil individu.
+      </p>
     </div>
 
+
+    <!-- ALAT UKUR ASESMEN -->
     <div class="assess-grid reveal">
+
       <div class="assess-card">
-        <div class="tool" style="font-family:'Poppins', sans-serif; font-weight: 500;">WAIS</div>
-        <div class="desc">Inteligensi & kemampuan kognitif</div>
+        <div class="tool"
+             style="font-family:'Poppins', sans-serif; font-weight:500;">
+          WAIS
+        </div>
+        <div class="desc">
+          Inteligensi & kemampuan kognitif
+        </div>
       </div>
+
+
       <div class="assess-card">
-        <div class="tool" style="font-family:'Poppins', sans-serif; font-weight: 500;">IST</div>
-        <div class="desc">Struktur intelegensi</div>
+        <div class="tool"
+             style="font-family:'Poppins', sans-serif; font-weight:500;">
+          IST
+        </div>
+        <div class="desc">
+          Struktur intelegensi
+        </div>
       </div>
+
+
       <div class="assess-card">
-        <div class="tool" style="font-family:'Poppins', sans-serif; font-weight: 500;">PAULI</div>
-        <div class="desc">Ketahanan & kecepatan kerja</div>
+        <div class="tool"
+             style="font-family:'Poppins', sans-serif; font-weight:500;">
+          PAULI
+        </div>
+        <div class="desc">
+          Ketahanan & Kecepatan Kerja
+        </div>
       </div>
+
+
       <div class="assess-card">
-        <div class="tool" style="font-family:'Poppins', sans-serif; font-weight: 500;">SSCT</div>
-        <div class="desc">Dinamika kepribadian</div>
+        <div class="tool"
+             style="font-family:'Poppins', sans-serif; font-weight:500;">
+          SSCT
+        </div>
+        <div class="desc">
+          Dinamika Kepribadian
+        </div>
       </div>
+
+
       <div class="assess-card">
-        <div class="tool" style="font-family:'Poppins', sans-serif; font-weight: 500;">DASS</div>
-        <div class="desc">Depresi, kecemasan, stres</div>
+        <div class="tool"
+             style="font-family:'Poppins', sans-serif; font-weight:500;">
+          DASS
+        </div>
+        <div class="desc">
+          Depresi, Kecemasan, Stres
+        </div>
       </div>
+
     </div>
 
+
+    <!-- DESKRIPSI PENGALAMAN -->
     <div class="assess-note reveal">
-      Menyusun laporan hasil asesmen secara sistematis — mencakup analisis profil individu, kesimpulan psikologis, dan rekomendasi tindak lanjut. Meraih nilai <strong>A-</strong> pada Mata Kuliah Asesmen Dewasa.
+      Menyusun laporan hasil asesmen secara sistematis — mencakup
+      analisis profil individu, kesimpulan psikologis, dan rekomendasi
+      tindak lanjut. Meraih nilai <strong>A-</strong> pada Mata Kuliah
+      Asesmen Dewasa.
     </div>
+
   </div>
 </section>
+```
 
-<!-- ===== PROYEK ===== -->
-<section class="projects" id="proyek">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Studi Kasus</span>
-      <h2 style="font-family:'Poppins', sans-serif; font-weight: 600;">Proyek Pilihan</h2>
-      <p>Proyek kuliah, riset, dan inisiatif menulis yang mencerminkan minat saya pada HR, asesmen, dan komunikasi.</p>
-    </div>
 
-    <div class="proj-grid">
-      <div class="proj-card reveal">
-        <span class="proj-tag">Manajemen Talenta</span>
-        <h3>Analisis Jabatan & Strategi Rekrutmen</h3>
-        <p>Merancang job analysis, job description, dan job specification untuk 3 posisi kunci (Sales Force, Digital Marketing, E-commerce), dilengkapi strategi sourcing multi-channel.</p>
-        <div class="proj-result">Strategi rekrutmen berbasis komunitas</div>
-      </div>
-
-      <div class="proj-card reveal">
-        <span class="proj-tag">Psikologi I&O</span>
-        <h3>Wawancara Sistem Kompensasi</h3>
-        <p>In-depth interview dengan Manager PPIC PT Super Steel Karawang & Store Manager Starbucks Indonesia untuk menganalisis struktur Core & Fringe Compensation.</p>
-        <div class="proj-result">Perbandingan kebijakan manufaktur vs F&B</div>
-      </div>
-
-      <div class="proj-card reveal">
-        <span class="proj-tag">Kewirausahaan</span>
-        <h3>Intervensi Wellbeing Berbasis Produk</h3>
-        <p>Merancang produk minuman herbal & aromaterapi untuk menurunkan stres kerja, lengkap dengan analisis segmentasi pasar psikografis dan SWOT bisnis.</p>
-        <div class="proj-result">Finalis 20 Besar Lomba Kewirausahaan 2025</div>
-      </div>
-
-      <div class="proj-card reveal">
-        <span class="proj-tag">Riset Eksperimental</span>
-        <h3>Positive Mood Induction & Performa Kognitif</h3>
-        <p>Menyusun naskah akademik dan mempresentasikan riset kuasi-eksperimental mengenai pengaruh suasana hati positif terhadap efisiensi fungsi eksekutif mental.</p>
-        <div class="proj-result">Dipresentasikan di KREASI 2025</div>
-      </div>
-
-      <div class="proj-card reveal">
-        <span class="proj-tag">Konten & SEO</span>
-        <h3>Blog Edukasi Psikologi — "Manusia Berdaya"</h3>
-        <p>Menulis dan mempublikasikan artikel SEO seputar kecemasan, depresi, dan kesehatan mental di Blogspot dan WordPress untuk audiens umum.</p>
-        <div class="proj-result">Dipublikasikan rutin sejak 2025</div>
-      </div>
-
-      <div class="proj-card reveal">
-        <span class="proj-tag">Copywriting</span>
-        <h3>Promotor Lomba Menulis Cerpen</h3>
-        <p>Merancang strategi promosi event lomba menulis cerita pendek untuk dua penerbit melalui Instagram dan copywriting persuasif.</p>
-        <div class="proj-result">700+ peserta gabungan dari dua kampanye</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ===== KONTAK ===== -->
 <section class="contact" id="kontak">
@@ -1019,8 +1520,8 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Mari Terhubung</span>
-      <h2>Tertarik berdiskusi soal HR, asesmen, atau kolaborasi?</h2>
-      <p>Saya terbuka untuk peluang magang, riset, maupun kolaborasi proyek di bidang human capital dan psikologi industri & organisasi.</p>
+      <h2>Tertarik berdiskusi soal HR, Copywriting, Asesmen Psikologis, atau Kolaborasi?</h2>
+      <p>Saya terbuka untuk peluang magang, riset, maupun kolaborasi.</p>
     </div>
     <div class="contact-links reveal">
       <a class="c-link" href="https://wa.me/6281278132211" target="_blank" rel="noopener">
